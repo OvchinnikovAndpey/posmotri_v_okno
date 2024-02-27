@@ -104,13 +104,9 @@ ol {
   width: fit-content;
 }
 
-.search-form:focus {
-  outline: none;
-}
-
-.search-form:focus-visible {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #FFF;
-  outline-offset: 1px;
+  outline-offset: 2px;
 }
 
 .search-form__label-text {
@@ -118,47 +114,28 @@ ol {
 }
 
 .search-form__textfield {
-  appearance: none;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: Fira Sans Condensed;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: start;
+  width: 224px;
+  color: #fff;
+  background: none;
+  outline: none;
   border: none;
-  border-bottom: 1px solid rgb(255, 255, 255);
-  border-top: 1px solid rgb(255, 255, 255);
-  cursor: auto;
-  inline-size: 225px; 
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-/* .search-form__textfield:active {
-  outline: 1px rgb(255, 255, 255);
-}
-
-.search-form__textfield:focus {
-  outline: none;
-}
-
-.search-form__textfield:focus-visible {
-  outline: none;
-} */
-
-
-.search-form__textfield:has(:focus-visible) {
-  outline: 1px solid #FFF;
-  outline-offset: 1px;
-}
+/* Чекбоксы */
 
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
   padding-bottom: 3px;
-}
-
-.search-form__checkbox-list:has(:focus-visible) {
-  outline: 1px solid #FFF;
-  outline-offset: 1px;
 }
 
 .search-form__pseudo-checkbox {
@@ -183,7 +160,9 @@ ol {
   margin: 1px 0 0 1px;
 }
 
-button {
+/* Кнопки проекта */
+
+.button {
   background-color: transparent;
   border: none;
   color: rgb(255, 255, 255);
@@ -231,6 +210,8 @@ button {
   
 }
 
+/* Секция карточек с видео */
+
 .content__details {
   display:flex;
   flex-direction: column;
@@ -255,8 +236,8 @@ button {
 .content__list {
   position: relative;
   overflow-x: clip;
-  overflow-y: scroll ;
-  scrollbar-width: none; /*убирает скролл*/
+  overflow-y: auto;
+  /* scrollbar-width: none; убирает скролл */
   width: 399px;
   height: 534px;
 }
@@ -274,15 +255,14 @@ margin-bottom: 30px;
 }
 
 .content__list-item:active {
-  background-color:rgb(84, 80, 80);;
+  background-color:rgb(84, 80, 80);
 }
 
 .content__video-card {
   display: flex;
   position: relative;
-  justify-content: flex-start;
-  width: 394px;
-  height: 107px;
+  /* width: 394px; */
+  height: 103px;
   padding: 2px;
 }
 
@@ -303,8 +283,13 @@ margin-bottom: 30px;
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: rgb(255, 255, 255);
+}
+
+.content__card-link_current {
+  background-color:rgb(84, 80, 80);
 }
 
 .content__video-card-title {
