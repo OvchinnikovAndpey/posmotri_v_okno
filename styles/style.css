@@ -179,7 +179,7 @@ ol {
 }
 
 .button:hover {
-  text-decoration: underline 1px #FFF;
+  text-decoration: underline 1px rgb(255, 255, 255);;
 }
 
 .button:focus {
@@ -206,7 +206,8 @@ ol {
   min-height: 34px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.5px
+  margin-bottom: 0.5px;
+  margin-top: 30px;
   
 }
 
@@ -235,23 +236,23 @@ ol {
 
 .content__list {
   position: relative;
-  overflow-x: clip;
+  overflow-x: hidden;
   overflow-y: auto;
   /* scrollbar-width: none; убирает скролл */
   width: 399px;
   height: 534px;
-}
+} 
 
 .content__list-item {
-margin-bottom: 30px;
+/* margin-bottom: 30px; */
 }
 
 .content__list-item:hover {
-  text-decoration: underline 1px #FFF;
+  text-decoration: underline 1px rgb(255, 255, 255);;
 }
 
-.content__list-item:last-child {
-  margin-bottom: 0px;
+.content__list-item:not(:first-child) {
+  margin-block-start: 30px;
 }
 
 .content__list-item:active {
@@ -260,32 +261,43 @@ margin-bottom: 30px;
 
 .content__video-card {
   display: flex;
-  position: relative;
-  /* width: 394px; */
-  height: 103px;
-  padding: 2px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 2px;
 }
 
 .content__video-card-description-container {
   flex-grow: 1;
-  /* width: 200px;
-  height: 30px; */
+  /* block-size: 103px; */
+  max-width: 200px;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 199px;
+
 }
 
 .content__video-card-thumbnail {
-  position: absolute;
-  top:0;
-  right: 0;
-  width: 194px;
-  height: 103px;
+  inline-size: 194px;
+  block-size: 103px;
   object-fit: cover;
-  /* padding-bottom: 15px; */
+  object-position: center;
 }
 
 .content__card-link {
   display: block;
   text-decoration: none;
   color: rgb(255, 255, 255);
+  margin: 2px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid rgb(255, 255, 255);
+  outline-offset: 1px;
 }
 
 .content__card-link_current {
@@ -293,11 +305,17 @@ margin-bottom: 30px;
 }
 
 .content__video-card-title {
+  display: block;
+  white-space: nowrap;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-family: Oswald;
   font-size: 30px;
   font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
+  
 }
 
 .content__video-card-description {
